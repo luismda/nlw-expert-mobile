@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from 'react'
-import { Slot } from 'expo-router'
+import { Stack } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
 import * as SplashScreen from 'expo-splash-screen'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -38,7 +38,7 @@ export default function RootLayout() {
     <SafeAreaView className="flex-1 bg-slate-900">
       <StatusBar style="light" backgroundColor="transparent" translucent />
 
-      <Slot
+      <Stack
         screenOptions={{
           headerShown: false,
           animation: 'slide_from_right',
