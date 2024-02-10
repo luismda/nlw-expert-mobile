@@ -1,5 +1,5 @@
 import { Image, ScrollView, Text, View } from 'react-native'
-import { useLocalSearchParams, useNavigation } from 'expo-router'
+import { Redirect, useLocalSearchParams, useNavigation } from 'expo-router'
 
 import { useCartStore } from '@/stores/cart-store'
 
@@ -15,11 +15,17 @@ export default function Product() {
   const navigation = useNavigation()
   const { id } = useLocalSearchParams()
 
-  const [product] = PRODUCTS.filter((product) => product.id === id)
+  const product = PRODUCTS.find((product) => product.id === id)
 
   function handleAddToCart() {
+    if (!product) return
+
     cartStore.add(product)
     navigation.goBack()
+  }
+
+  if (!product) {
+    return <Redirect href="/" />
   }
 
   return (
