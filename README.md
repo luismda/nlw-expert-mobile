@@ -19,7 +19,7 @@ The project was developed using these technologies:
 - Zustand
 - TailwindCSS (NativeWind)
 
-Additionally, this project was developed during Rocketseat NLW programming event. The project's Figma can be accessed via the link below.
+Additionally, this project was developed during [Rocketseat](https://github.com/rocketseat-education) NLW programming event. The project's Figma can be accessed via the link below.
 
 [**Access the project layout in Figma**](https://www.figma.com/community/file/1336456468568916765/nlw-expert-orders)
 
