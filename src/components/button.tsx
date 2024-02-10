@@ -7,17 +7,27 @@ import {
 
 import { ComponentProps } from 'react'
 import { Feather } from '@expo/vector-icons'
+import { clsx } from 'clsx'
 
-type ButtonProps = TouchableOpacityProps
+interface ButtonProps extends TouchableOpacityProps {
+  isDisabled?: boolean
+}
+
 type ButtonTextProps = TextProps
 type ButtonIconProps = ComponentProps<typeof Feather>
 
-function Button(props: ButtonProps) {
+function Button({ isDisabled = false, ...rest }: ButtonProps) {
   return (
     <TouchableOpacity
       activeOpacity={0.7}
-      className="h-12 flex-row items-center justify-center rounded-md bg-lime-400"
-      {...props}
+      disabled={isDisabled}
+      className={clsx(
+        'h-12 flex-row items-center justify-center rounded-md bg-lime-400',
+        {
+          'opacity-70': isDisabled,
+        },
+      )}
+      {...rest}
     />
   )
 }
